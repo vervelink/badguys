@@ -60,6 +60,8 @@
 -A RH-Firewall-1-INPUT -s 104.245.101.166 -j DROP
 -A RH-Firewall-1-INPUT -s 85.25.214.38 -j DROP
 -A RH-Firewall-1-INPUT -s 167.114.157.70 -j DROP
+-A RH-Firewall-1-INPUT -s 66.240.236.119 -j DROP
+-A RH-Firewall-1-INPUT -s 198.20.69.98 -j DROP
 -A RH-Firewall-1-INPUT -j LOG
 -A RH-Firewall-1-INPUT -j DROP
 COMMIT
