@@ -49,6 +49,7 @@
 #UDP Traffic Enablement
 -A RH-Firewall-1-INPUT -p udp -m udp --dport 8000:32768 -j ACCEPT
 #Blocking Bad Guys
+-A RH-Firewall-1-INPUT -s 178.162.201.166 -j DROP
 -A RH-Firewall-1-INPUT -s 69.30.230.90 -j DROP
 -A RH-Firewall-1-INPUT -s 5.79.65.65 -j DROP
 -A RH-Firewall-1-INPUT -s 23.92.80.76 -j DROP
