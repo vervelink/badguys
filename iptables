@@ -34,6 +34,7 @@
 -A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
 -A RH-Firewall-1-INPUT -p udp -m state --state NEW -m udp --dport 7038 -j ACCEPT
 -A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 7000 -j ACCEPT
+-A RH-Firewall-1-INPUT -p udp -m state --state NEW -m udp --dport 7000 -j ACCEPT
 -A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 7038 -j ACCEPT
 -A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 5555 -j ACCEPT
 -A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 7083 -j ACCEPT
