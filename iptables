@@ -29,6 +29,7 @@
 -A RH-Firewall-1-INPUT  -s 182.176.221.64/30 -j ACCEPT
 -A RH-Firewall-1-INPUT  -s 182.176.220.33/27 -j ACCEPT
 #Allow Ports
+-A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 8080 -j ACCEPT
 -A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 2229 -j ACCEPT
 -A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT
 -A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
