@@ -51,14 +51,26 @@
 #UDP Traffic Enablement
 -A RH-Firewall-1-INPUT -p udp -m udp --dport 8000:32768 -j ACCEPT
 #Blocking Bad Guys
+-A RH-Firewall-1-INPUT -s 104.245.101.166 -j DROP
+-A RH-Firewall-1-INPUT -s 107.150.51.44 -j DROP
+-A RH-Firewall-1-INPUT -s 167.114.157.70 -j DROP
+-A RH-Firewall-1-INPUT -s 178.162.201.166 -j DROP
+-A RH-Firewall-1-INPUT -s 188.138.75.87 -j DROP
+-A RH-Firewall-1-INPUT -s 188.161.247.174 -j DROP
+-A RH-Firewall-1-INPUT -s 190.104.213.175 -j DROP
+-A RH-Firewall-1-INPUT -s 195.154.39.5 -j DROP
+-A RH-Firewall-1-INPUT -s 195.154.48.200 -j DROP
+-A RH-Firewall-1-INPUT -s 195.154.58.164 -j DROP
+-A RH-Firewall-1-INPUT -s 197.35.80.238 -j DROP
 -A RH-Firewall-1-INPUT -s 198.20.69.98 -j DROP
 -A RH-Firewall-1-INPUT -s 199.19.109.112 -j DROP
 -A RH-Firewall-1-INPUT -s 199.217.119.231 -j DROP
+-A RH-Firewall-1-INPUT -s 199.48.164.101 -j DROP
 -A RH-Firewall-1-INPUT -s 201.159.225.251 -j DROP
 -A RH-Firewall-1-INPUT -s 203.122.26.68 -j DROP
 -A RH-Firewall-1-INPUT -s 204.124.182.62 -j DROP
--A RH-Firewall-1-INPUT -s 209.126.109.78 -j DROP
 -A RH-Firewall-1-INPUT -s 209.126.109.76 -j DROP
+-A RH-Firewall-1-INPUT -s 209.126.109.78 -j DROP
 -A RH-Firewall-1-INPUT -s 212.26.122.8 -j DROP
 -A RH-Firewall-1-INPUT -s 212.83.140.45 -j DROP
 -A RH-Firewall-1-INPUT -s 212.83.148.64 -j DROP
@@ -73,8 +85,11 @@
 -A RH-Firewall-1-INPUT -s 5.10.124.117 -j DROP
 -A RH-Firewall-1-INPUT -s 5.79.65.65 -j DROP
 -A RH-Firewall-1-INPUT -s 62.210.127.148 -j DROP
+-A RH-Firewall-1-INPUT -s 62.210.248.235 -j DROP
 -A RH-Firewall-1-INPUT -s 62.210.249.97 -j DROP
+-A RH-Firewall-1-INPUT -s 62.210.251.48 -j DROP
 -A RH-Firewall-1-INPUT -s 66.240.236.119 -j DROP
+-A RH-Firewall-1-INPUT -s 69.197.155.26 -j DROP
 -A RH-Firewall-1-INPUT -s 69.30.230.90 -j DROP
 -A RH-Firewall-1-INPUT -s 69.30.238.10 -j DROP
 -A RH-Firewall-1-INPUT -s 71.6.135.131 -j DROP
@@ -84,35 +99,6 @@
 -A RH-Firewall-1-INPUT -s 85.25.185.4 -j DROP
 -A RH-Firewall-1-INPUT -s 85.25.214.143 -j DROP
 -A RH-Firewall-1-INPUT -s 85.25.214.203 -j DROP
--A RH-Firewall-1-INPUT -s 85.25.214.38 -j DROP
--A RH-Firewall-1-INPUT -s 197.35.80.238 -j DROP
--A RH-Firewall-1-INPUT -s 190.104.213.175 -j DROP
--A RH-Firewall-1-INPUT -s 188.161.247.174 -j DROP
--A RH-Firewall-1-INPUT -s 188.138.75.87 -j DROP
--A RH-Firewall-1-INPUT -s 69.30.238.10 -j DROP
--A RH-Firewall-1-INPUT -s 23.239.65.170 -j DROP
--A RH-Firewall-1-INPUT -s 23.92.80.53 -j DROP
--A RH-Firewall-1-INPUT -s 107.150.51.44 -j DROP
--A RH-Firewall-1-INPUT -s 212.83.148.64 -j DROP
--A RH-Firewall-1-INPUT -s 178.162.201.166 -j DROP
--A RH-Firewall-1-INPUT -s 69.30.230.90 -j DROP
--A RH-Firewall-1-INPUT -s 5.79.65.65 -j DROP
--A RH-Firewall-1-INPUT -s 23.92.80.76 -j DROP
--A RH-Firewall-1-INPUT -s 199.48.164.101 -j DROP
--A RH-Firewall-1-INPUT -s 195.154.58.164 -j DROP
--A RH-Firewall-1-INPUT -s 195.154.39.5  -j DROP
--A RH-Firewall-1-INPUT -s 195.154.48.200 -j DROP
--A RH-Firewall-1-INPUT -s 69.197.155.26 -j DROP
--A RH-Firewall-1-INPUT -s 62.210.251.48 -j DROP
--A RH-Firewall-1-INPUT -s 62.210.248.235 -j DROP
--A RH-Firewall-1-INPUT -s 104.245.101.166 -j DROP
--A RH-Firewall-1-INPUT -s 85.25.214.38 -j DROP
--A RH-Firewall-1-INPUT -s 167.114.157.70 -j DROP
--A RH-Firewall-1-INPUT -s 66.240.236.119 -j DROP
--A RH-Firewall-1-INPUT -s 198.20.69.98 -j DROP
--A RH-Firewall-1-INPUT -s 23.92.80.99 -j DROP
--A RH-Firewall-1-INPUT -s 212.83.166.10 -j DROP
--A RH-Firewall-1-INPUT -s 178.162.201.166 -j DROP
 -A RH-Firewall-1-INPUT -s 85.25.214.38 -j DROP
 -A RH-Firewall-1-INPUT -j LOG
 -A RH-Firewall-1-INPUT -j DROP
