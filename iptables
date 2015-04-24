@@ -5,12 +5,12 @@
 :OUTPUT ACCEPT [497:94527]
 :RH-Firewall-1-INPUT - [0:0]
 -A INPUT -j RH-Firewall-1-INPUT
--A INPUT -s 10.0.0.0/8 -i eth0 -j LOG --log-prefix "IP DROP SPOOF A: "
--A INPUT -s 172.16.0.0/12 -i eth0 -j LOG --log-prefix "IP DROP SPOOF B: "
--A INPUT -s 192.168.0.0/16 -i eth0 -j LOG --log-prefix "IP DROP SPOOF C: "
--A INPUT -s 224.0.0.0/4 -i eth0 -j LOG --log-prefix "IP DROP MULTICAST D: "
--A INPUT -s 240.0.0.0/5 -i eth0 -j LOG --log-prefix "IP DROP SPOOF E: "
--A INPUT -d 127.0.0.0/8 -i eth0 -j LOG --log-prefix "IP DROP LOOPBACK: "
+-A INPUT -s 10.0.0.0/8 -i eth1 -j LOG --log-prefix "IP DROP SPOOF A: "
+-A INPUT -s 172.16.0.0/12 -i eth1 -j LOG --log-prefix "IP DROP SPOOF B: "
+-A INPUT -s 192.168.0.0/16 -i eth1 -j LOG --log-prefix "IP DROP SPOOF C: "
+-A INPUT -s 224.0.0.0/4 -i eth1 -j LOG --log-prefix "IP DROP MULTICAST D: "
+-A INPUT -s 240.0.0.0/5 -i eth1 -j LOG --log-prefix "IP DROP SPOOF E: "
+-A INPUT -d 127.0.0.0/8 -i eth1 -j LOG --log-prefix "IP DROP LOOPBACK: "
 #Syn Flood Limiter
 -A INPUT -p tcp --syn -m limit --limit 5/s -j ACCEPT
 #Forwarding to Redhat Firewall
