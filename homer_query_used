@@ -1,2 +1,3 @@
 select source_ip,from_user from sip_capture where length(from_user) < 7 and from_user !='SBC' group by source_ip;
 select useragent,total from stats_useragent group by useragent order by total desc;
+select source_ip,from_user from sip_capture where msg like '%friendly-scanner%'; // change friendly-scanner with the useragent you want to search
