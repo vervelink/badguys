@@ -18,10 +18,10 @@
 #Allow Localhost
 -A RH-Firewall-1-INPUT -i lo -j ACCEPT
 #Allow ICMP
--A RH-Firewall-1-INPUT -p icmp -m icmp --icmp-type 0 -j ACCEPT
--A RH-Firewall-1-INPUT -p icmp -m icmp --icmp-type 3 -j ACCEPT
--A RH-Firewall-1-INPUT -p icmp -m icmp --icmp-type 11 -j ACCEPT
--A RH-Firewall-1-INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+#-A RH-Firewall-1-INPUT -p icmp -m icmp --icmp-type 0 -j ACCEPT
+#-A RH-Firewall-1-INPUT -p icmp -m icmp --icmp-type 3 -j ACCEPT
+#-A RH-Firewall-1-INPUT -p icmp -m icmp --icmp-type 11 -j ACCEPT
+#-A RH-Firewall-1-INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
 #Allow Different Connection States
 -A RH-Firewall-1-INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 #Allow Our Ranges
