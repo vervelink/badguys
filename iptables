@@ -244,8 +244,6 @@
 -A RH-Firewall-1-INPUT -s 93.120.27.62 -j DROP
 -A RH-Firewall-1-INPUT -s 94.23.86.78 -j DROP
 -A RH-Firewall-1-INPUT -s 94.75.244.180 -j DROP
--A RH-Firewall-1-INPUT -j LOG
--A RH-Firewall-1-INPUT -j DROP
 #Allow Ports
 -A RH-Firewall-1-INPUT  -m state --state NEW -m tcp -p tcp --dport 9101:9103 -j ACCEPT
 -A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 8080 -j ACCEPT
@@ -269,5 +267,7 @@
 -A RH-Firewall-1-INPUT -p tcp --dport 5986 -j DROP
 #UDP Traffic Enablement
 -A RH-Firewall-1-INPUT -p udp -m udp --dport 8000:32768 -j ACCEPT
+-A RH-Firewall-1-INPUT -j LOG
+-A RH-Firewall-1-INPUT -j DROP
 COMMIT
 # Completed on Thu Apr  2 04:38:31 2015
