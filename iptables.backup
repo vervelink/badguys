@@ -29,8 +29,33 @@
 -A RH-Firewall-1-INPUT  -s 182.176.221.64/30 -j ACCEPT
 -A RH-Firewall-1-INPUT  -s 182.176.220.33/27 -j ACCEPT
 #TEST
+-A RH-Firewall-1-INPUT -s 104.131.144.69 -j DROP
+#Allow Ports
+-A RH-Firewall-1-INPUT  -m state --state NEW -m tcp -p tcp --dport 9101:9103 -j ACCEPT
+-A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 8080 -j ACCEPT
+-A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 2229 -j ACCEPT
+-A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT
+-A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+-A RH-Firewall-1-INPUT -p udp -m state --state NEW -m udp --dport 7038 -j ACCEPT
+-A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 7000 -j ACCEPT
+-A RH-Firewall-1-INPUT -p udp -m state --state NEW -m udp --dport 7000 -j ACCEPT
+-A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 7038 -j ACCEPT
+-A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 5555 -j ACCEPT
+-A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 7083 -j ACCEPT
+-A RH-Firewall-1-INPUT -p udp -m state --state NEW -m udp --dport 5060:5070 -j ACCEPT
+-A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 5060:5070 -j ACCEPT
+#Allow Crossbar HTTP & HTTPS
+-A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 8000 -j ACCEPT
+-A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 8443 -j ACCEPT
+#Blocking Database / Big Couch Access From Outside Unless Explicitly Allowed
+-A RH-Firewall-1-INPUT -p tcp --dport 5984 -j DROP
+-A RH-Firewall-1-INPUT -p tcp --dport 15984 -j DROP
+-A RH-Firewall-1-INPUT -p tcp --dport 5986 -j DROP
+#UDP Traffic Enablement
+-A RH-Firewall-1-INPUT -p udp -m udp --dport 8000:32768 -j ACCEPT
 #Blocking Bad Guys
 #Adding my ip to test
+-A INPUT -s 104.131.144.69 -j DROP
 -A RH-Firewall-1-INPUT -s 104.131.144.69 -j DROP
 -A RH-Firewall-1-INPUT -s 10.11.203.36 -j DROP
 -A RH-Firewall-1-INPUT -s 103.254.139.98 -j DROP
@@ -246,28 +271,5 @@
 -A RH-Firewall-1-INPUT -s 94.75.244.180 -j DROP
 -A RH-Firewall-1-INPUT -j LOG
 -A RH-Firewall-1-INPUT -j DROP
-#Allow Ports
--A RH-Firewall-1-INPUT  -m state --state NEW -m tcp -p tcp --dport 9101:9103 -j ACCEPT
--A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 8080 -j ACCEPT
--A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 2229 -j ACCEPT
--A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT
--A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
--A RH-Firewall-1-INPUT -p udp -m state --state NEW -m udp --dport 7038 -j ACCEPT
--A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 7000 -j ACCEPT
--A RH-Firewall-1-INPUT -p udp -m state --state NEW -m udp --dport 7000 -j ACCEPT
--A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 7038 -j ACCEPT
--A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 5555 -j ACCEPT
--A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 7083 -j ACCEPT
--A RH-Firewall-1-INPUT -p udp -m state --state NEW -m udp --dport 5060:5070 -j ACCEPT
--A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 5060:5070 -j ACCEPT
-#Allow Crossbar HTTP & HTTPS
--A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 8000 -j ACCEPT
--A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 8443 -j ACCEPT
-#Blocking Database / Big Couch Access From Outside Unless Explicitly Allowed
--A RH-Firewall-1-INPUT -p tcp --dport 5984 -j DROP
--A RH-Firewall-1-INPUT -p tcp --dport 15984 -j DROP
--A RH-Firewall-1-INPUT -p tcp --dport 5986 -j DROP
-#UDP Traffic Enablement
--A RH-Firewall-1-INPUT -p udp -m udp --dport 8000:32768 -j ACCEPT
 COMMIT
 # Completed on Thu Apr  2 04:38:31 2015
