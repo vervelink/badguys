@@ -1,3 +1,4 @@
+ipset -N blockedips iphash
 ipset -A blockedips 8.28.53.131
 ipset -A blockedips 85.25.177.144
 ipset -A blockedips 188.138.102.49
