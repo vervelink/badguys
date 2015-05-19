@@ -29,6 +29,10 @@
 -A RH-Firewall-1-INPUT  -s 182.176.221.64/30 -j ACCEPT
 -A RH-Firewall-1-INPUT  -s 182.176.220.33/27 -j ACCEPT
 #Blocking Bad Guys
+-A RH-Firewall-1-INPUT -s 8.28.53.131 -j DROP
+-A RH-Firewall-1-INPUT -s 85.25.177.144 -j DROP
+-A RH-Firewall-1-INPUT -s 188.138.102.49 -j DROP
+-A RH-Firewall-1-INPUT -s 50.30.47.46 -j DROP
 -A RH-Firewall-1-INPUT -s 212.83.136.41 -j DROP
 -A RH-Firewall-1-INPUT -s 85.25.104.147 -j DROP
 -A RH-Firewall-1-INPUT -s 62.75.207.16 -j DROP
