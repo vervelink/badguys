@@ -1,0 +1,2 @@
+ansible all -a "ipset add blockedips XXXXXXX" -u root -f 4
+ansible all -a "service ipset save" -u root
